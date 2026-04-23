@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Counter </title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div id="container">
+        <h2>A counter with Reset and Save</h2>
+        <p>On this page we built a counter <b>button</b> that can perform:</p>
+        <p>&#9679; <b>Increase</b> the counter</p>
+        <p>&#9679; <b>Decrease</b> the counter</p>
+        <p>&#9679; <b>Reset</b> the counter</p>
+        <p>&#9679; <b>Save</b> the counter</p>
+        <p>&#9679; <b>Reload</b> the counter</p>
+        <p id="counter_value" style="font-size:40px;">0</p>
+        <button id="increament" title="Increase" onclick="increaseCount()">+</button>
+        <button id="decreament" title="Decrease" onclick="decreaseCount()">-</button>
+        <button id="reset" title="Reset" onclick="resetCount() ">&#10227;</button>
+        <button id="save" title="Save" onclick="saveCount()">&#128190;</button>
+        <button id="reload" title="Reload" onclick="reloadCount()"> &#8635;</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
