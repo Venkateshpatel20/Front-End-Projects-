@@ -1,14 +1,17 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector(".reset-btn");
-let new_game = document.querySelector("#new-btn")
+let new_game = document.querySelector("#new-btn");
+let msg = document.querySelector("#msg");
+let msg_container = document.querySelector(".msg-container");
+
 
 // Accessing player's turn
-let turn1 = true; 
+let turn1 = true;
 let count = 0 //to track draw
 
 // the positions in which a player wins 
 const winPatterns = [
-[0, 1, 2],
+  [0, 1, 2],
   [0, 3, 6],
   [0, 4, 8],
   [1, 4, 7],
@@ -19,23 +22,58 @@ const winPatterns = [
 ]
 
 boxes.forEach((box) => {
-  box.addEventListener("click" , () => {
+  box.addEventListener("click", () => {
     console.log("you have clicked ");
     if (turn1) {
       box.innerHTML = "X";
       turn1 = false;
     }
-    else{
+    else {
       box.innerHTML = "0";
       turn1 = true;
     }
     box.disabled = true;
-    count += 1;
+    count++;
 
-    function checkWinner() {
-      
+    isWinner();
+    if (count == 9 && !isWinner()) {
+      // console.log("You draw the match");
+      draw();
     }
+
+
     // box.backgroundColor = "red";
   });
 });
+
+
+let draw = () => {
+  console.log("We have a draw");
+
+}
+let showWinner = (winner) => {
+  msg.innerHTML = `Congratulations winner is ${winner}`;
+  msg_container.classList.remove("hide");
+}
+
+const isWinner = () => {
+  for (let pattern of winPatterns) {
+
+    let posVal1 = boxes[pattern[0]].innerText;
+    let posVal2 = boxes[pattern[1]].innerText;
+    let posVal3 = boxes[pattern[2]].innerText;
+
+    if (posVal1 != "" && posVal2 != "" && posVal3 != "") {
+      if (posVal1 === posVal2 && posVal2 === posVal3) {
+        console.log("You have winner");
+        showWinner(posVal1);
+        return true;
+      }
+    }
+    // console.log(pattern[0] , pattern[1] , pattern[2]);
+    // console.log(boxes[pattern[0]] , boxes[pattern[1]] , boxes[pattern[2]])
+    // console.log(boxes[pattern[0]].innerText , boxes[pattern[1]].innerText , boxes[pattern[2]].innerText)
+  }
+  // return false; //return undefined automatiacally
+}
 
