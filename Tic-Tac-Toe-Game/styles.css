@@ -1,19 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-body{
-    background-color: #FF9505;
-    text-align: center;
 
+body {
+    background-color: #ff9505;
+    text-align: center;
 }
-.container{
+
+.container {
     height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.game{
+
+.game {
     height: 60vmin;
     width: 60vmin;
     display: flex;
@@ -23,28 +26,62 @@ body{
     gap: 1.5vmin;
 }
 
-.box{
+.box {
     height: 18vmin;
     width: 18vmin;
     border-radius: 1.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     font-size: 8vmin;
-    color:#1553BE;
+    color: #1553be;
     border: none;
-
-}
-.reset-btn{
-
-  padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #2aa443;
-  color: #fff;
-  border-radius: 1rem;
-  border: none;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
+.reset-btn,
+#new-btn {
+    cursor: pointer;
+}
 
+.reset-btn::after {
+    cursor: pointer;
+    color: black;
+}
 
-.hide{
+.reset-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #059622;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+}
+
+h1 {
+    margin-top: 1rem;
+    color: rgb(148, 27, 27);
+    font-family: sans-serif;
+    font-size: 2.5rem;
+}
+
+.hide {
     display: none;
+    height: 20vmin;
+}
+
+#new-btn {
+    /* height: 3.5rem; */
+    /* padding: 1rem; */
+    font-size: 1.25rem;
+    background-color: #2aa443;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    /* margin-bottom: 10px; */
+    margin: auto;
+}
+
+#msg {
+    font-size: 1.5rem;
+    margin: 10px;
 }
